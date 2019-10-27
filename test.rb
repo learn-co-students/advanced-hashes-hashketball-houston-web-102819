@@ -154,7 +154,7 @@ end
 
 def player_stats(player_name)
   stats = {}
-  game_hash.each do |player|
+  player_data.each do |player|
     if player_name == player[:player_name]
       stats[:number] = player[:number]
       stats[:shoe] = player[:shoe]
@@ -164,7 +164,12 @@ def player_stats(player_name)
       stats[:steals] = player[:steals]
       stats[:blocks] = player[:blocks]
       stats[:slam_dunks] = player[:slam_dunks]
+    end
+  end
+  return stats
+end
  
+p player_stats("Alan Anderson") 
 
 
 
