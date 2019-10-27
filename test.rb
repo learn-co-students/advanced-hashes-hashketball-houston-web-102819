@@ -131,20 +131,6 @@ end
 
 #p player_data
 
-#######################################################################################
-#TESTS
-#######################################################################################
-#Access player data 
-def player_data
-  players = []
-  game_hash.each do |home_away, team_details|
-    players << team_details[:players]
-  end
-  return players.flatten
-end
-
-#p player_data[0]
-
 #Access player data by team
 def player_data_by_team(team)
   players = []
@@ -158,6 +144,20 @@ end
 
 #p player_data_by_team("Brooklyn Nets")
 #p game_hash[:home]
+
+
+#######################################################################################
+#TESTS
+#######################################################################################
+
+def shoe_size(name)
+  p player_data[name][:shoe]
+end
+shoe_size("Alan Anderson")
+
+
+
+
 
 
 #p game_hash[:home][:players]
