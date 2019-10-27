@@ -155,6 +155,7 @@ end
 #
 #Answers
 #######################################################################################
+#######################################################################################
 def shoe_size(name)
   i = 0
   while i < player_data.length
@@ -164,7 +165,7 @@ def shoe_size(name)
     i+=1
   end
 end
-
+###########################################
 def team_colors(team_name)
   if team_name == "Brooklyn Nets"
     return game_hash[:home][:colors]
@@ -172,10 +173,20 @@ def team_colors(team_name)
     return game_hash[:away][:colors]
   end 
 end
-
+###########################################
 def team_names
   teams = []
   teams << game_hash[:home][:team_name]
   teams << game_hash[:away][:team_name]
   return teams
 end
+############################################
+def player_numbers(team_name)
+  team_numbers = []
+  team_data = player_data_by_team(team_name)
+  team_data.each do |player|
+    team_numbers.push(player[:number])
+  end
+  return team_numbers
+end
+#############################################
