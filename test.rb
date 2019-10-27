@@ -151,11 +151,17 @@ end
 #######################################################################################
 
 def shoe_size(name)
-  p player_data[name][:shoe]
+  i = 0
+  while i < player_data.length
+    if player_data[i][:player_name] == name
+      p player_data[i][:shoe]
+    end
+    i+=1
+  end
 end
 shoe_size("Alan Anderson")
 
-
+#p player_data[0][:player_name]
 
 
 
