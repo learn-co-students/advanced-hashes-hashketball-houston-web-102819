@@ -149,15 +149,11 @@ end
 #######################################################################################
 #TESTS
 #######################################################################################
-def team_colors(team_name)
-  if team_name = "Brooklyn Nets"
-    game_hash[:home][:colors]
-  else
-    game_hash[:away][:colors]
-  end 
-end
+#p player_data[0][:player_name]
 
-p team_colors("Brooklyn Nets")  
+
+
+ 
 
 
 
@@ -177,6 +173,13 @@ def shoe_size(name)
     i+=1
   end
 end
-shoe_size("Alan Anderson")
+#shoe_size("Alan Anderson")
 
-#p player_data[0][:player_name]
+def team_colors(team_name)
+  if team_name = "Brooklyn Nets"
+    game_hash[:home][:colors]
+  else
+    game_hash[:away][:colors]
+  end 
+end
+#p team_colors("Brooklyn Nets") 
