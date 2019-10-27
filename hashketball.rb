@@ -118,8 +118,29 @@ def game_hash
   }
 end
 
-def player_name(data)
-end 
+#######################################################################################
+#Methods Tool Box
+#######################################################################################
+#Access ALL player data AoH 
+def player_data
+  players = []
+  game_hash.each do |home_away, team_details|
+    players << team_details[:players]
+  end
+  return players.flatten
+end
+
+
+#Access player data by team AoH
+def player_data_by_team(team)
+  players = []
+  if team = game_hash[:home][:team_name]
+    players << game_hash[:home][:players]
+  else
+    players << game_hash[:away][:players]
+  end
+  return players.flatten
+end  
 
 def num_points_scored(name)
   #RETURN THE NUMBER OF POINTS THAT A PLAYER SCORED
@@ -130,9 +151,9 @@ def num_points_scored(name)
   end
 end
 
-
-
-
-
+#######################################################################################
+#
+#Answers
+#######################################################################################
 
 

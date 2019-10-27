@@ -129,7 +129,7 @@ def player_data
   return players.flatten
 end
 
-p player_data
+#p player_data
 
 #######################################################################################
 #TESTS
@@ -148,19 +148,19 @@ end
 #Access player data by team
 def player_data_by_team(team)
   players = []
-  team_info = []
   if team = game_hash[:home][:team_name]
-    team_info << game_hash[:home]
+    players << game_hash[:home][:players]
   else
-    team_info << game_hash[:away]
+    players << game_hash[:away][:players]
   end
-  team_info.each do |home_away, team_details|
-    players << team_details[:players]
-  end
-  return players
+  return players.flatten
 end  
 
-p player_data_by_team("Brooklyn Nets")
+#p player_data_by_team("Brooklyn Nets")
+#p game_hash[:home]
+
+
+#p game_hash[:home][:players]
 #######################################################################################
 #ANSWERS
 #######################################################################################
