@@ -156,6 +156,14 @@ end
 #Answers
 #######################################################################################
 #######################################################################################
+def num_points_scored(name)
+  player_data.each do |player|
+    if name == player[:player_name]
+      return player[:points]
+    end
+  end
+end
+##########################################
 def shoe_size(name)
   i = 0
   while i < player_data.length
