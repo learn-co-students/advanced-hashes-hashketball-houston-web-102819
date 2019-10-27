@@ -159,17 +159,16 @@ def shoe_size(name)
   i = 0
   while i < player_data.length
     if player_data[i][:player_name] == name
-      p player_data[i][:shoe]
+      return player_data[i][:shoe]
     end
     i+=1
   end
 end
-shoe_size("Alan Anderson")
 
 def team_colors(team_name)
   if team_name = "Brooklyn Nets"
-    game_hash[:home][:colors]
+    return game_hash[:home][:colors]
   else
-    game_hash[:away][:colors]
+    return game_hash[:away][:colors]
   end 
 end
