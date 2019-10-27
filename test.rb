@@ -147,18 +147,19 @@ end
 
 
 #######################################################################################
-#TESTS
+#Tests 
 #######################################################################################
 #p player_data
 
-def team_names
-  teams = []
-  teams << game_hash[:home][:team_name]
-  teams << game_hash[:away][:team_name]
-  return teams
+def player_numbers(team_name)
+  team_numbers = []
+  team_data = player_data_by_team(team_name)
+  team_data.each do |player|
+    team_numbers.push(player[:number])
+  end
+  return team_numbers
 end
-p team_names 
-
+p player_numbers(team_name)
  
 
 
@@ -192,3 +193,11 @@ def team_colors(team_name)
 end
 #p team_colors("Brooklyn Nets") 
 #p team_colors("charlotte Hornets")
+
+def team_names
+  teams = []
+  teams << game_hash[:home][:team_name]
+  teams << game_hash[:away][:team_name]
+  return teams
+end
+#p team_names 
