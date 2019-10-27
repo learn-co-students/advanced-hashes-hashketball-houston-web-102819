@@ -174,14 +174,15 @@ def shoe_size(name)
   end
 end
 #shoe_size("Alan Anderson")
-shoe_size("Jeff Adrien")
+#shoe_size("Jeff Adrien")
 #p player_data[9][:shoe]
 
 def team_colors(team_name)
   if team_name == "Brooklyn Nets"
-    game_hash[:home][:colors]
+    return game_hash[:home][:colors]
   else
-    game_hash[:away][:colors]
+    return game_hash[:away][:colors]
   end 
 end
 #p team_colors("Brooklyn Nets") 
+p team_colors("charlotte Hornets")
