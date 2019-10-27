@@ -1,5 +1,3 @@
-# Write your code here!
-
 def game_hash
   hash = {
     :home =>{ 
@@ -117,11 +115,12 @@ def game_hash
     }
   }
 end
+#######################################################################################
+#LIBRARY OF METHODS
+#######################################################################################
+#game_hash
 
-#######################################################################################
-#Methods Tool Box
-#######################################################################################
-#Access ALL player data AoH 
+#Access player data 
 def player_data
   players = []
   game_hash.each do |home_away, team_details|
@@ -130,8 +129,9 @@ def player_data
   return players.flatten
 end
 
+#p player_data
 
-#Access player data by team AoH
+#Access player data by team
 def player_data_by_team(team)
   players = []
   if team == game_hash[:home][:team_name]
@@ -142,54 +142,16 @@ def player_data_by_team(team)
   return players.flatten
 end  
 
+#p player_data_by_team("Brooklyn Nets")
+#p game_hash[:home]
+#p player_data_by_team("Charlotte Hornets") 
+#p game_hash[:home][:team_name]
 
 #######################################################################################
-#
-#Answers
+#Tests 
 #######################################################################################
-#######################################################################################
-def num_points_scored(name)
-  player_data.each do |player|
-    if name == player[:player_name]
-      return player[:points]
-    end
-  end
-end
-##########################################
-def shoe_size(name)
-  i = 0
-  while i < player_data.length
-    if player_data[i][:player_name] == name
-      return player_data[i][:shoe]
-    end
-    i+=1
-  end
-end
-###########################################
-def team_colors(team_name)
-  if team_name == "Brooklyn Nets"
-    return game_hash[:home][:colors]
-  else
-    return game_hash[:away][:colors]
-  end 
-end
-###########################################
-def team_names
-  teams = []
-  teams << game_hash[:home][:team_name]
-  teams << game_hash[:away][:team_name]
-  return teams
-end
-############################################
-def player_numbers(team_name)
-  team_numbers = []
-  team_data = player_data_by_team(team_name)
-  team_data.each do |player|
-    team_numbers.push(player[:number])
-  end
-  return team_numbers
-end
-#############################################
+#p player_data
+
 def player_stats(player_name)
   stats = {}
   player_data.each do |player|
@@ -206,17 +168,64 @@ def player_stats(player_name)
   end
   return stats
 end
+ 
+#p player_stats("Alan Anderson") 
 
-##############################################
 
-def big_shoe_rebounds
-  biggest_shoe_player = player_data[0]
-  player_data.each do |player|
-    if player[:shoe] > biggest_shoe_player[:shoe]
-      biggest_shoe_player = player
+
+
+
+
+#######################################################################################
+#ANSWERS
+#######################################################################################
+
+def shoe_size(name)
+  i = 0
+  while i < player_data.length
+    if player_data[i][:player_name] == name
+      p player_data[i][:shoe]
     end
+    i+=1
   end
-  return biggest_shoe_player[:rebounds]
-end   
+end
+#shoe_size("Alan Anderson")
+#shoe_size("Jeff Adrien")
+#p player_data[9][:shoe]
 
-#p big_shoe_rebounds  
+
+
+def team_colors(team_name)
+  if team_name == "Brooklyn Nets"
+    return game_hash[:home][:colors]
+  else
+    return game_hash[:away][:colors]
+  end 
+end
+#p team_colors("Brooklyn Nets") 
+#p team_colors("charlotte Hornets")
+
+
+
+def team_names
+  teams = []
+  teams << game_hash[:home][:team_name]
+  teams << game_hash[:away][:team_name]
+  return teams
+end
+#p team_names 
+
+
+
+def player_numbers(team_name)
+  team_numbers = []
+  team_data = player_data_by_team(team_name)
+  team_data.each do |player|
+    team_numbers.push(player[:number])
+  end
+  return team_numbers
+end
+#p player_numbers("Charlotte Hornets")
+
+
+
