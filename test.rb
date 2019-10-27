@@ -1,5 +1,3 @@
-# Write your code here!
-
 def game_hash
   hash = {
     :home =>{ 
@@ -117,22 +115,67 @@ def game_hash
     }
   }
 end
+#######################################################################################
+#LIBRARY OF METHODS
+#######################################################################################
+#game_hash
 
-def player_name(data)
-end 
-
-def num_points_scored(name)
-  #RETURN THE NUMBER OF POINTS THAT A PLAYER SCORED
-  game_hash.each do |home, players|
-    p players
-    #value.each do |players2, array|
-    #p players2
+#Access player data 
+def player_data
+  players = []
+  game_hash.each do |home_away, team_details|
+    players << team_details[:players]
   end
+  return players.flatten
 end
 
+p player_data
 
+#######################################################################################
+#TESTS
+#######################################################################################
+#Access player data 
+def player_data
+  players = []
+  game_hash.each do |home_away, team_details|
+    players << team_details[:players]
+  end
+  return players.flatten
+end
 
+#p player_data[0]
 
+#Access player data by team
+def player_data_by_team(team)
+  players = []
+  team_info = []
+  if team = game_hash[:home][:team_name]
+    team_info << game_hash[:home]
+  else
+    team_info << game_hash[:away]
+  end
+  team_info.each do |home_away, team_details|
+    players << team_details[:players]
+  end
+  return players
+end  
 
+p player_data_by_team("Brooklyn Nets")
+#######################################################################################
+#ANSWERS
+#######################################################################################
+#def num_points_scored(name)
+  #RETURN THE NUMBER OF POINTS THAT A PLAYER SCORED
+  #game_hash.each do |home_away, team_details|
+    #team = team_details[2]
+    #p side
+    #p team_details
+    #team.each do |tier2_key, tier2_value|
+      #p tier2_key
+      #p tier2_value
+      #end
+    #end
+  #end
+#end
 
-
+#num_points_scored("Kemba Walker")
