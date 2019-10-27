@@ -152,15 +152,18 @@ end
 #######################################################################################
 #p player_data
 
-def player_numbers(team_name)
-  team_numbers = []
-  team_data = player_data_by_team(team_name)
-  team_data.each do |player|
-    team_numbers.push(player[:number])
-  end
-  return team_numbers
-end
-#p player_numbers("Charlotte Hornets")
+def player_stats(player_name)
+  stats = {}
+  game_hash.each do |player|
+    if player_name == player[:player_name]
+      stats[:number] = player[:number]
+      stats[:shoe] = player[:shoe]
+      stats[:points] = player[:points]
+      stats[:rebounds] = player[:rebounds]
+      stats[:assists] = player[:assists]
+      stats[:steals] = player[:steals]
+      stats[:blocks] = player[:blocks]
+      stats[:slam_dunks] = player[:slam_dunks]
  
 
 
@@ -185,6 +188,8 @@ end
 #shoe_size("Jeff Adrien")
 #p player_data[9][:shoe]
 
+
+
 def team_colors(team_name)
   if team_name == "Brooklyn Nets"
     return game_hash[:home][:colors]
@@ -195,6 +200,8 @@ end
 #p team_colors("Brooklyn Nets") 
 #p team_colors("charlotte Hornets")
 
+
+
 def team_names
   teams = []
   teams << game_hash[:home][:team_name]
@@ -202,3 +209,18 @@ def team_names
   return teams
 end
 #p team_names 
+
+
+
+def player_numbers(team_name)
+  team_numbers = []
+  team_data = player_data_by_team(team_name)
+  team_data.each do |player|
+    team_numbers.push(player[:number])
+  end
+  return team_numbers
+end
+#p player_numbers("Charlotte Hornets")
+
+
+
