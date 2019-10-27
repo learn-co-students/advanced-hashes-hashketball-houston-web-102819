@@ -142,14 +142,6 @@ def player_data_by_team(team)
   return players.flatten
 end  
 
-def num_points_scored(name)
-  #RETURN THE NUMBER OF POINTS THAT A PLAYER SCORED
-  game_hash.each do |home, players|
-    p players
-    #value.each do |players2, array|
-    #p players2
-  end
-end
 
 #######################################################################################
 #
@@ -214,3 +206,17 @@ def player_stats(player_name)
   end
   return stats
 end
+
+##############################################
+
+def big_shoe_rebounds
+  biggest_shoe_player = player_data[0]
+  player_data.each do |player|
+    if player[:shoe] > biggest_shoe_player[:shoe]
+      biggest_shoe_player = player
+    end
+  end
+  return biggest_shoe_player[:rebounds]
+end   
+
+p big_shoe_rebounds  
