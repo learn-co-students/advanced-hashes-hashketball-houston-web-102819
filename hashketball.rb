@@ -190,3 +190,19 @@ def player_numbers(team_name)
   return team_numbers
 end
 #############################################
+def player_stats(player_name)
+  stats = {}
+  player_data.each do |player|
+    if player_name == player[:player_name]
+      stats[:number] = player[:number]
+      stats[:shoe] = player[:shoe]
+      stats[:points] = player[:points]
+      stats[:rebounds] = player[:rebounds]
+      stats[:assists] = player[:assists]
+      stats[:steals] = player[:steals]
+      stats[:blocks] = player[:blocks]
+      stats[:slam_dunks] = player[:slam_dunks]
+    end
+  end
+  return stats
+end
