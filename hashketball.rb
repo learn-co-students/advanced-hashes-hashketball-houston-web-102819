@@ -155,5 +155,14 @@ end
 #
 #Answers
 #######################################################################################
-
+def shoe_size(name)
+  i = 0
+  while i < player_data.length
+    if player_data[i][:player_name] == name
+      p player_data[i][:shoe]
+    end
+    i+=1
+  end
+end
+shoe_size("Alan Anderson")
 

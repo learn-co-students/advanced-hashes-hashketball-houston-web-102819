@@ -149,6 +149,24 @@ end
 #######################################################################################
 #TESTS
 #######################################################################################
+def team_colors(team_name)
+  if team_name = "Brooklyn Nets"
+    game_hash[:home][:colors]
+  else
+    game_hash[:away][:colors]
+  end 
+end
+
+p team_colors("Brooklyn Nets")  
+
+
+
+
+
+
+#######################################################################################
+#ANSWERS
+#######################################################################################
 
 def shoe_size(name)
   i = 0
@@ -162,26 +180,3 @@ end
 shoe_size("Alan Anderson")
 
 #p player_data[0][:player_name]
-
-
-
-
-#p game_hash[:home][:players]
-#######################################################################################
-#ANSWERS
-#######################################################################################
-#def num_points_scored(name)
-  #RETURN THE NUMBER OF POINTS THAT A PLAYER SCORED
-  #game_hash.each do |home_away, team_details|
-    #team = team_details[2]
-    #p side
-    #p team_details
-    #team.each do |tier2_key, tier2_value|
-      #p tier2_key
-      #p tier2_value
-      #end
-    #end
-  #end
-#end
-
-#num_points_scored("Kemba Walker")
