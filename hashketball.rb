@@ -134,7 +134,7 @@ end
 #Access player data by team AoH
 def player_data_by_team(team)
   players = []
-  if team = game_hash[:home][:team_name]
+  if team == game_hash[:home][:team_name]
     players << game_hash[:home][:players]
   else
     players << game_hash[:away][:players]
