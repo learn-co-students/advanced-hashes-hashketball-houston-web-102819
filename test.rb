@@ -134,7 +134,7 @@ end
 #Access player data by team
 def player_data_by_team(team)
   players = []
-  if team = game_hash[:home][:team_name]
+  if team == game_hash[:home][:team_name]
     players << game_hash[:home][:players]
   else
     players << game_hash[:away][:players]
@@ -144,7 +144,8 @@ end
 
 #p player_data_by_team("Brooklyn Nets")
 #p game_hash[:home]
-
+#p player_data_by_team("Charlotte Hornets") 
+#p game_hash[:home][:team_name]
 
 #######################################################################################
 #Tests 
@@ -159,7 +160,7 @@ def player_numbers(team_name)
   end
   return team_numbers
 end
-p player_numbers(team_name)
+#p player_numbers("Charlotte Hornets")
  
 
 
