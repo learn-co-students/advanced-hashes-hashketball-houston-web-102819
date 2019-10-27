@@ -151,7 +151,13 @@ end
 #######################################################################################
 #p player_data
 
-
+def team_names
+  teams = []
+  teams << game_hash[:home][:team_name]
+  teams << game_hash[:away][:team_name]
+  return teams
+end
+p team_names 
 
  
 
@@ -185,4 +191,4 @@ def team_colors(team_name)
   end 
 end
 #p team_colors("Brooklyn Nets") 
-p team_colors("charlotte Hornets")
+#p team_colors("charlotte Hornets")
